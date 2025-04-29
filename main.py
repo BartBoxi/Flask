@@ -15,8 +15,17 @@ def bye():
 ## this is one way of adding decorators
 
 def make_bold(func):
+    def wrapper(*args, **kwargs):
+        return '<b>' + func(*args, **kwargs) + '</b>'
+    return wrapper
 
+def make_emphasis(func):
+    def wrapper(*args, **kwargs):
+        return '<em>' +func(*args, **kwargs) + '</em>'
 
+def make_underlined(func):
+    def wrapper(*args, **kwargs):
+        return '<u>' +func(*args, **kwargs) + '</u>'
 
 @app.route("/byebye")
 @make_bold
