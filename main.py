@@ -17,23 +17,23 @@ def bye():
 def make_bold(func):
     def wrapper(*args, **kwargs):
         return '<b>' + func(*args, **kwargs) + '</b>'
-    return wrapper
+    return wrapper ##always need to return the wrapper
 
 def make_emphasis(func):
     def wrapper(*args, **kwargs):
-        return '<em>' +func(*args, **kwargs) + '</em>'
+        return '<em>' + func(*args, **kwargs) + '</em>'
+    return wrapper
 
 def make_underlined(func):
     def wrapper(*args, **kwargs):
-        return '<u>' +func(*args, **kwargs) + '</u>'
+        return '<u>' + func(*args, **kwargs) + '</u>'
+    return wrapper
 
-@app.route("/byebye")
+@app.route("/contact")
 @make_bold
-@make_emphasis
 @make_underlined
-
-def bye():
-    return "ByeBye!"
+def contact():
+    return "Contact details!"
 
 
 
