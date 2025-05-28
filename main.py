@@ -58,8 +58,8 @@ def is_authenticated_decorator(function):
 def create_blog_post(user):
     print(f"This is {user.name}'s new blog post")
 
-new_user = User("bart")
-create_blog_post(new_user)
+# new_user = User("bart")
+# create_blog_post(new_user)
 
 
 if __name__ == "__main__":
